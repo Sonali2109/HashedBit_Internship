@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeated Sum of Digits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Repeated Sum of Digits</h2>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="findRepeatedSum()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function repeatedDigitSum(num) {
+            while (num >= 10) {
+                num = num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
+            }
+            return num;
+        }
+
+        function findRepeatedSum() {
+            let num = document.getElementById("numberInput").value;
+            if (num === "" || isNaN(num) || num < 0) {
+                document.getElementById("result").innerText = "Please enter a valid positive number.";
+                return;
+            }
+            let result = repeatedDigitSum(parseInt(num));
+            document.getElementById("result").innerText = "Final single digit: " + result;
+        }
+    </script>
+</body>
+</html>

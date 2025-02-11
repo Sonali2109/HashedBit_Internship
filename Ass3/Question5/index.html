@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Replacer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Word Replacer</h1>
+    <textarea id="inputString" placeholder="Enter a sentence..." rows="5" cols="50"></textarea>
+    <br>
+    <input type="text" id="wrongWord" placeholder="Wrong word" />
+    <input type="text" id="correctWord" placeholder="Correct word" />
+    <br>
+    <button onclick="correctfn()">Replace Word</button>
+    
+    <div id="result">
+      <h2>Updated Sentence:</h2>
+      <p id="outputString"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
